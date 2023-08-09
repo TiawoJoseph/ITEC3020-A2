@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submission</title>
+</head>
+<body>
+    <form action="/action_page.php">
+        <label for="phrase">Enter a phrase consisting of at least 3 words separated by the character 
+            ' ' (space).</label>
+        <input type="text" id="phrase" name="phrase"><br><br>
+        <input type="submit" value="Submit">
+      </form>
+    
+
+      <script>
+
+        UserInput = document.getElementById('phrase');
+        //Is it alphabetic
+
+        function isAlphabet(char){
+            return /^[a-z]$/i.test(char)
+        }
+        //Is it Numeric 
+
+        function isNumeric (char){
+            result;
+            if(isNaN(char)){
+                result = false;
+            }
+            else{
+                result=true;
+            }
+            return result;
+
+        }
+
+        //Does it have two special characters 
+
+        function specialCharacters (char){
+            
+        }
+
+
+      </script>
+</body>
+</html>
