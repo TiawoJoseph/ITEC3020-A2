@@ -6,11 +6,11 @@
     <title>Form Submission</title>
 </head>
 <body>
-    <form action="/action_page.php">
+    <form action="error.php" method="post">
         <label for="phrase">Enter a phrase consisting of at least 3 words separated by the character 
             ' ' (space).</label>
         <input type="text" id="phrase" name="phrase"><br><br>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit" onclick="Validation(phrase)">
       </form>
     
 
@@ -39,7 +39,32 @@
         //Does it have two special characters 
 
         function specialCharacters (char){
-            
+            specialChars =/[`!@#$%^&*()_\-+=\[\]{};':"\\|,.<>\/?~ ]/;
+            rtn;
+            if(char.includes(specialChars)>=2){
+                rtn = true;
+            }
+            else {
+                rtn=false;
+            }
+            return rtn;
+        }
+
+        // Validation Alert form 
+
+        function Validation(char){
+            if(char.isAlphabet==false){
+                alert("Something is wrong with the alphabets");
+            }
+            else if (char.isNumeric==false) {
+                alert("Something is wrong with thenumbers");
+            }
+            else if (char.specialCharacters==false) {
+                alert("Something is wrong with the special Characters");
+            }
+            else {
+
+            }
         }
 
 
